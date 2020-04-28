@@ -1,7 +1,7 @@
 {
   "name": "hexletprj1",
   "version": "1.0.0",
-  "description": "igry razuma",
+  "description": "brain-games",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/evgeniya-osmakova/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/evgeniya-osmakova/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/evgeniya-osmakova/frontend-project-lvl1#readme",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }
