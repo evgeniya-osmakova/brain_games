@@ -1,6 +1,6 @@
-import { gameSteps } from '../index.js';
+import { runGame } from '../index.js';
 
-const dataGeneration = () => {
+const generateData = () => {
   const questionData = Math.floor(Math.random() * 100) + 1;
   const rightAnswer = (questionData % 2 === 0) ? 'yes' : 'no';
   return { questionData, rightAnswer };
@@ -8,7 +8,7 @@ const dataGeneration = () => {
 
 const runEvenGame = () => {
   const message = 'Answer "yes" if the number is even, otherwise answer "no".';
-  gameSteps(message, dataGeneration);
+  runGame(message, generateData);
 };
 
 export default runEvenGame;

@@ -7,7 +7,7 @@ export const hello = () => {
   return name;
 };
 
-export const gameSteps = (message, dataGenerationFunc) => {
+export const runGame = (message, dataGenerationFunc) => {
   const name = hello();
   console.log(message);
   for (let i = 0; i < 3; i += 1) {
