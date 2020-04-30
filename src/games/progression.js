@@ -24,7 +24,9 @@ const generateData = () => {
   const progressionStep = generateRandomNumber();
   const progressionBeginning = generateRandomNumber();
   const missedIndex = generateRandomNumber();
-  const { questionData, rightAnswer } = generateProgression(progressionStep, progressionBeginning, missedIndex);
+  const { questionData, rightAnswer } = generateProgression(
+    progressionStep, progressionBeginning, missedIndex,
+  );
   return { questionData, rightAnswer };
 };
 
