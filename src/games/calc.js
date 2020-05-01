@@ -20,12 +20,13 @@ const findRightAnswer = (number1, number2, mathOperation) => {
   return rightAnswer;
 };
 
-const generateRandomNumber = () => Math.floor(Math.random() * 10) + 1;
+const generateRandomNumber = (upperBound) => Math.floor(Math.random() * upperBound);
 
 const generateData = () => {
-  const randomNumber1 = generateRandomNumber();
-  const randomNumber2 = generateRandomNumber();
-  const randomMathOperationIndex = Math.floor(Math.random() * mathOperations.length);
+  const upperBound = 10;
+  const randomNumber1 = generateRandomNumber(upperBound);
+  const randomNumber2 = generateRandomNumber(upperBound);
+  const randomMathOperationIndex = generateRandomNumber(mathOperations.length);
   const randomMathOperation = mathOperations[randomMathOperationIndex];
   const questionData = `${randomNumber1} ${randomMathOperation} ${randomNumber2}`;
   const rightAnswer = findRightAnswer(randomNumber1, randomNumber2, randomMathOperation);

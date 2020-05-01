@@ -1,12 +1,12 @@
 import { runGame } from '../index.js';
 
-const progresionLength = 10;
+const progressionLength = 10;
 
 const generateProgression = (step, beginning, missedIndex) => {
   let questionData = `${beginning}`;
   let currentNumber = beginning;
   let rightAnswer;
-  for (let i = 1; i < progresionLength; i += 1) {
+  for (let i = 1; i < progressionLength; i += 1) {
     currentNumber += step;
     if (i === missedIndex) {
       questionData = `${questionData} ..`;

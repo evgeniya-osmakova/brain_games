@@ -13,8 +13,8 @@ const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
 
 const generateData = () => {
   const questionData = generateRandomNumber();
-  const resultOfPrimeChek = isPrime(questionData);
-  const rightAnswer = (resultOfPrimeChek) ? 'yes' : 'no';
+  const resultOfPrimeCheck = isPrime(questionData);
+  const rightAnswer = (resultOfPrimeCheck) ? 'yes' : 'no';
   return { questionData, rightAnswer };
 };
 
