@@ -9,7 +9,9 @@ const isPrime = (number) => {
   return true;
 };
 
-const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+const upperBoundForNumberGeneration = 100;
+
+const generateRandomNumber = () => Math.floor(Math.random() * upperBoundForNumberGeneration);
 
 const generateData = () => {
   const questionData = generateRandomNumber();

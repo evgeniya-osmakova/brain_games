@@ -1,7 +1,9 @@
 import { runGame } from '../index.js';
 
+const upperBoundForNumberGeneration = 100;
+
 const generateData = () => {
-  const questionData = Math.floor(Math.random() * 100) + 1;
+  const questionData = Math.floor(Math.random() * upperBoundForNumberGeneration);
   const rightAnswer = (questionData % 2 === 0) ? 'yes' : 'no';
   return { questionData, rightAnswer };
 };

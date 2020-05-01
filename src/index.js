@@ -7,10 +7,12 @@ export const hello = () => {
   return name;
 };
 
+const numberOfGameRounds = 3;
+
 export const runGame = (message, dataGenerationFunc) => {
   const name = hello();
   console.log(message);
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numberOfGameRounds; i += 1) {
     const { questionData, rightAnswer } = dataGenerationFunc();
     console.log(`Question: ${questionData}`);
     const answer = readlineSync.question('Your answer: ');

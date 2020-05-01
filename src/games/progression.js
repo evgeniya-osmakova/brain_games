@@ -18,7 +18,9 @@ const generateProgression = (step, beginning, missedIndex) => {
   return { rightAnswer, questionData };
 };
 
-const generateRandomNumber = () => Math.floor(Math.random() * 10) + 1;
+const upperBoundForNumberGeneration = 10;
+
+const generateRandomNumber = () => Math.floor(Math.random() * upperBoundForNumberGeneration);
 
 const generateData = () => {
   const progressionStep = generateRandomNumber();

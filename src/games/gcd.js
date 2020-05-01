@@ -14,7 +14,9 @@ const findRightAnswer = (number1, number2) => {
   return min;
 };
 
-const generateRandomNumber = () => Math.floor(Math.random() * 10) + 1;
+const upperBoundForNumberGeneration = 10;
+
+const generateRandomNumber = () => Math.floor(Math.random() * upperBoundForNumberGeneration);
 
 const generateData = () => {
   const randomNumber1 = generateRandomNumber();

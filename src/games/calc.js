@@ -23,9 +23,9 @@ const findRightAnswer = (number1, number2, mathOperation) => {
 const generateRandomNumber = (upperBound) => Math.floor(Math.random() * upperBound);
 
 const generateData = () => {
-  const upperBound = 10;
-  const randomNumber1 = generateRandomNumber(upperBound);
-  const randomNumber2 = generateRandomNumber(upperBound);
+  const upperBoundForNumberGeneration = 10;
+  const randomNumber1 = generateRandomNumber(upperBoundForNumberGeneration);
+  const randomNumber2 = generateRandomNumber(upperBoundForNumberGeneration);
   const randomMathOperationIndex = generateRandomNumber(mathOperations.length);
   const randomMathOperation = mathOperations[randomMathOperationIndex];
   const questionData = `${randomNumber1} ${randomMathOperation} ${randomNumber2}`;
