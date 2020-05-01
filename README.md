@@ -4,20 +4,22 @@
 
 <img src="https://github.com/evgeniya-osmakova/frontend-project-lvl1/workflows/Node%20CI/badge.svg" alt="Node CI" style="max-width:100%;">
 
-Пример установки пакета и демонстрация игры "Проверка на чётность"
+Packet install. Demo 'Is even?' game.
+
 <a href="https://asciinema.org/a/2XUslhie6s9PL75VLcH63G7J8" target="_blank"><img src="https://asciinema.org/a/2XUslhie6s9PL75VLcH63G7J8.svg" /></a>
 
-Демонстрация игры "Калькулятор"
+Demo 'Calculator' game.
+
 <a href="https://asciinema.org/a/Kdg97iS5cyhGupHwJhwy5mtLq" target="_blank"><img src="https://asciinema.org/a/2XUslhie6s9PL75VLcH63G7J8.svg" /></a>
 
-Демонстрация игры "НОД"
+Demo 'Greatest common divisor' game.
 
 <a href="https://asciinema.org/a/UQzrlqBaZnWRRBP4Uo72WalPS" target="_blank"><img src="https://asciinema.org/a/2XUslhie6s9PL75VLcH63G7J8.svg" /></a>
 
-Демонстрация игры "Арифметическая прогрессия"
+Demo 'Arithmetic progression' game.
 
 <a href="https://asciinema.org/a/CWQDK5MAioHdWwRD85QMOReIW" target="_blank"><img src="https://asciinema.org/a/2XUslhie6s9PL75VLcH63G7J8.svg" /></a>
 
-Демонстрация игры "Простое ли число?"
+Demo 'Is prime?' game.
 
 <a href="https://asciinema.org/a/hg09IZQWO3z55PmndoSYd9Rfc" target="_blank"><img src="https://asciinema.org/a/2XUslhie6s9PL75VLcH63G7J8.svg" /></a>
