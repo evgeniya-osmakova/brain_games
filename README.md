@@ -1,8 +1,10 @@
 # frontend-project-lvl1
 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/evgeniya-osmakova/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/98a43d86dbdb5ded54bc/maintainability" /></a>
 
-<img src="https://github.com/evgeniya-osmakova/frontend-project-lvl1/workflows/Node%20CI/badge.svg" alt="Node CI" style="max-width:100%;">
+<a href="https://codeclimate.com/github/evgeniya-osmakova/frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/98a43d86dbdb5ded54bc/test_coverage" /></a>
+
+<a href="https://github.com/evgeniya-osmakova/frontend-project-lvl1/actions"><img src="https://github.com/evgeniya-osmakova/frontend-project-lvl1/workflows/Node%20CI/badge.svg" /></a>
 
 Packet install. Demo 'Is even?' game.
 
