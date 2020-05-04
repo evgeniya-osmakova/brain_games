@@ -1,40 +1,36 @@
-import { runGame } from '../index.js';
+import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const mathOperations = ['+', '-', '*'];
 
 const findRightAnswer = (number1, number2, mathOperation) => {
-  let rightAnswer;
   switch (mathOperation) {
     case '+':
-      rightAnswer = number1 + number2;
-      break;
+      return number1 + number2;
     case '-':
-      rightAnswer = number1 - number2;
-      break;
+      return number1 - number2;
     case '*':
-      rightAnswer = number1 * number2;
-      break;
+      return number1 * number2;
     default:
-      break;
+      throw new Error(`Operation not found: '${mathOperation}'`);
   }
-  return rightAnswer;
 };
 
-const generateRandomNumber = (upperBound) => Math.floor(Math.random() * upperBound);
+const upperBoundForNumberGeneration = 10;
 
 const generateData = () => {
-  const upperBoundForNumberGeneration = 10;
-  const randomNumber1 = generateRandomNumber(upperBoundForNumberGeneration);
-  const randomNumber2 = generateRandomNumber(upperBoundForNumberGeneration);
-  const randomMathOperationIndex = generateRandomNumber(mathOperations.length);
-  const randomMathOperation = mathOperations[randomMathOperationIndex];
-  const questionData = `${randomNumber1} ${randomMathOperation} ${randomNumber2}`;
-  const rightAnswer = findRightAnswer(randomNumber1, randomNumber2, randomMathOperation);
-  return { questionData, rightAnswer };
+  const number1 = generateRandomNumber(upperBoundForNumberGeneration);
+  const number2 = generateRandomNumber(upperBoundForNumberGeneration);
+  const mathOperationIndex = generateRandomNumber(mathOperations.length);
+  const mathOperation = mathOperations[mathOperationIndex];
+  const questionData = `${number1} ${mathOperation} ${number2}`;
+  const rightAnswer = findRightAnswer(number1, number2, mathOperation);
+  return { questionData, rightAnswer: rightAnswer.toString() };
 };
 
+const message = 'What is the result of the expression?';
+
 const runCalcGame = () => {
-  const message = 'What is the result of the expression?';
   runGame(message, generateData);
 };
 

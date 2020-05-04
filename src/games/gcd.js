@@ -1,4 +1,5 @@
-import { runGame } from '../index.js';
+import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const findRightAnswer = (number1, number2) => {
   let min = Math.min(number1, number2);
@@ -6,28 +7,28 @@ const findRightAnswer = (number1, number2) => {
   if (max % min === 0) {
     return min;
   }
-  let diff = Math.abs(max - min);
-  while (diff % min !== 0) {
+  let diff = max - min;
+  while (diff !== min) {
+    const temporaryMin = Math.min(diff, min);
     diff = Math.abs(diff - min);
-    min = Math.min(diff, min);
+    min = temporaryMin;
   }
   return min;
 };
 
 const upperBoundForNumberGeneration = 10;
 
-const generateRandomNumber = () => Math.floor(Math.random() * upperBoundForNumberGeneration);
-
 const generateData = () => {
-  const randomNumber1 = generateRandomNumber();
-  const randomNumber2 = generateRandomNumber();
-  const questionData = `${randomNumber1} ${randomNumber2}`;
-  const rightAnswer = findRightAnswer(randomNumber1, randomNumber2);
-  return { questionData, rightAnswer };
+  const number1 = generateRandomNumber(upperBoundForNumberGeneration);
+  const number2 = generateRandomNumber(upperBoundForNumberGeneration);
+  const questionData = `${number1} ${number2}`;
+  const rightAnswer = findRightAnswer(number1, number2);
+  return { questionData, rightAnswer: rightAnswer.toString() };
 };
 
+const message = 'Find the greatest common divisor of given numbers.';
+
 const runGcdGame = () => {
-  const message = 'Find the greatest common divisor of given numbers.';
   runGame(message, generateData);
 };
 
