@@ -16,22 +16,20 @@ const findRightAnswer = (number1, number2, mathOperation) => {
   }
 };
 
-const upperBoundForNumberGeneration = 10;
-
-const generateData = () => {
-  const number1 = generateRandomNumber(upperBoundForNumberGeneration);
-  const number2 = generateRandomNumber(upperBoundForNumberGeneration);
-  const mathOperationIndex = generateRandomNumber(mathOperations.length);
+const genRoundData = () => {
+  const number1 = generateRandomNumber(1, 10);
+  const number2 = generateRandomNumber(1, 10);
+  const mathOperationIndex = generateRandomNumber(0, mathOperations.length - 1);
   const mathOperation = mathOperations[mathOperationIndex];
-  const questionData = `${number1} ${mathOperation} ${number2}`;
-  const rightAnswer = findRightAnswer(number1, number2, mathOperation);
-  return { questionData, rightAnswer: rightAnswer.toString() };
+  const question = `${number1} ${mathOperation} ${number2}`;
+  const rightAnswer = findRightAnswer(number1, number2, mathOperation).toString();
+  return { question, rightAnswer };
 };
 
-const message = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
 const runCalcGame = () => {
-  runGame(message, generateData);
+  runGame(task, genRoundData);
 };
 
 export default runCalcGame;

@@ -1,20 +1,18 @@
 import runGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const upperBoundForNumberGeneration = 100;
-
 const isEven = (number) => number % 2 === 0;
 
-const generateData = () => {
-  const questionData = generateRandomNumber(upperBoundForNumberGeneration);
-  const rightAnswer = (isEven(questionData)) ? 'yes' : 'no';
-  return { questionData, rightAnswer };
+const genRoundData = () => {
+  const question = generateRandomNumber(0, 100);
+  const rightAnswer = (isEven(question)) ? 'yes' : 'no';
+  return { question, rightAnswer };
 };
 
-const message = 'Answer "yes" if the number is even, otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const runEvenGame = () => {
-  runGame(message, generateData);
+  runGame(task, genRoundData);
 };
 
 export default runEvenGame;

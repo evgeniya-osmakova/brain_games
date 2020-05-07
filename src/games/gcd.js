@@ -1,35 +1,39 @@
 import runGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const findRightAnswer = (number1, number2) => {
-  let min = Math.min(number1, number2);
-  const max = Math.max(number1, number2);
-  if (max % min === 0) {
-    return min;
+const getGCD = (number1, number2) => {
+  if (number1 === 0) {
+    return number2;
   }
-  let diff = max - min;
-  while (diff !== min) {
-    const temporaryMin = Math.min(diff, min);
-    diff = Math.abs(diff - min);
-    min = temporaryMin;
+  if (number2 === 0) {
+    return number1;
   }
-  return min;
+  if (number1 === number2) {
+    return number1;
+  }
+  let copyNumber1 = number1;
+  let copyNumber2 = number2;
+  do {
+    const min = Math.min(copyNumber1, copyNumber2);
+    const diff = Math.abs(copyNumber1 - copyNumber2);
+    copyNumber1 = min;
+    copyNumber2 = diff;
+  } while (copyNumber1 !== copyNumber2);
+  return copyNumber1.toString();
 };
 
-const upperBoundForNumberGeneration = 10;
-
-const generateData = () => {
-  const number1 = generateRandomNumber(upperBoundForNumberGeneration);
-  const number2 = generateRandomNumber(upperBoundForNumberGeneration);
-  const questionData = `${number1} ${number2}`;
-  const rightAnswer = findRightAnswer(number1, number2);
-  return { questionData, rightAnswer: rightAnswer.toString() };
+const genRoundData = () => {
+  const number1 = generateRandomNumber(0, 50);
+  const number2 = generateRandomNumber(0, 50);
+  const question = `${number1} ${number2}`;
+  const rightAnswer = getGCD(number1, number2);
+  return { question, rightAnswer };
 };
 
-const message = 'Find the greatest common divisor of given numbers.';
+const task = 'Find the greatest common divisor of given numbers.';
 
 const runGcdGame = () => {
-  runGame(message, generateData);
+  runGame(task, genRoundData);
 };
 
 export default runGcdGame;

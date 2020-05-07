@@ -3,38 +3,31 @@ import generateRandomNumber from '../utils.js';
 
 const progressionLength = 10;
 
-const generateProgression = (step, beginning, missedIndex) => {
-  let questionData = `${beginning}`;
+const generateProgression = (step, beginning) => {
+  const questionData = [beginning];
   let currentNumber = beginning;
-  let rightAnswer;
   for (let i = 1; i < progressionLength; i += 1) {
     currentNumber += step;
-    if (i === missedIndex) {
-      questionData = `${questionData} ..`;
-      rightAnswer = currentNumber;
-    } else {
-      questionData = `${questionData} ${currentNumber}`;
-    }
+    questionData.push(currentNumber);
   }
-  return { rightAnswer, questionData };
+  return questionData;
 };
 
-const upperBoundForNumberGeneration = 10;
-
-const generateData = () => {
-  const progressionStep = generateRandomNumber(upperBoundForNumberGeneration);
-  const progressionBeginning = generateRandomNumber(upperBoundForNumberGeneration);
-  const missedIndex = generateRandomNumber(upperBoundForNumberGeneration);
-  const { questionData, rightAnswer } = generateProgression(
-    progressionStep, progressionBeginning, missedIndex,
-  );
-  return { questionData, rightAnswer: rightAnswer.toString() };
+const genRoundData = () => {
+  const progressionStep = generateRandomNumber(1, 10);
+  const progressionBeginning = generateRandomNumber(1, 20);
+  const missedIndex = generateRandomNumber(0, 9);
+  const progression = generateProgression(progressionStep, progressionBeginning);
+  const rightAnswer = progression[missedIndex].toString();
+  progression[missedIndex] = '..';
+  const question = progression.join(' ');
+  return { question, rightAnswer };
 };
 
-const message = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 
 const runProgressionGame = () => {
-  runGame(message, generateData);
+  runGame(task, genRoundData);
 };
 
 export default runProgressionGame;
