@@ -4,7 +4,7 @@ import generateRandomNumber from '../utils.js';
 const isEven = (number) => number % 2 === 0;
 
 const genRoundData = () => {
-  const question = generateRandomNumber(0, 100);
+  const question = generateRandomNumber(0, 100).toString();
   const rightAnswer = (isEven(question)) ? 'yes' : 'no';
   return { question, rightAnswer };
 };

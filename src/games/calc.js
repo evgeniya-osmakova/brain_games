@@ -3,7 +3,7 @@ import generateRandomNumber from '../utils.js';
 
 const mathOperations = ['+', '-', '*'];
 
-const findRightAnswer = (number1, number2, mathOperation) => {
+const calculateNumbers = (number1, number2, mathOperation) => {
   switch (mathOperation) {
     case '+':
       return number1 + number2;
@@ -22,7 +22,7 @@ const genRoundData = () => {
   const mathOperationIndex = generateRandomNumber(0, mathOperations.length - 1);
   const mathOperation = mathOperations[mathOperationIndex];
   const question = `${number1} ${mathOperation} ${number2}`;
-  const rightAnswer = findRightAnswer(number1, number2, mathOperation).toString();
+  const rightAnswer = calculateNumbers(number1, number2, mathOperation).toString();
   return { question, rightAnswer };
 };
 

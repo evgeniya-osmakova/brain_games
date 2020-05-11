@@ -19,14 +19,14 @@ const getGCD = (number1, number2) => {
     copyNumber1 = min;
     copyNumber2 = diff;
   } while (copyNumber1 !== copyNumber2);
-  return copyNumber1.toString();
+  return copyNumber1;
 };
 
 const genRoundData = () => {
   const number1 = generateRandomNumber(0, 50);
   const number2 = generateRandomNumber(0, 50);
   const question = `${number1} ${number2}`;
-  const rightAnswer = getGCD(number1, number2);
+  const rightAnswer = getGCD(number1, number2).toString();
   return { question, rightAnswer };
 };
 
