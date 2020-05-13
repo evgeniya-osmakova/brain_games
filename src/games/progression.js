@@ -4,9 +4,9 @@ import generateRandomNumber from '../utils.js';
 const progressionLength = 10;
 
 const generateProgression = (step, beginning) => {
-  const progression = [beginning];
-  for (let i = 1; i < progressionLength; i += 1) {
-    const current = progression[0] + i * step;
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    const current = beginning + i * step;
     progression.push(current);
   }
   return progression;
