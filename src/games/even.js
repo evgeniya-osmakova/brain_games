@@ -6,7 +6,7 @@ const isEven = (number) => number % 2 === 0;
 const genRoundData = () => {
   const number = generateRandomNumber(0, 100);
   const question = number.toString();
-  const rightAnswer = (isEven(question)) ? 'yes' : 'no';
+  const rightAnswer = (isEven(number)) ? 'yes' : 'no';
   return { question, rightAnswer };
 };
 
