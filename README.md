@@ -1,4 +1,4 @@
-# frontend-project-lvl1
+# Brain games
 
 <a href="https://codeclimate.com/github/evgeniya-osmakova/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/98a43d86dbdb5ded54bc/maintainability" /></a>
 
